@@ -1,15 +1,7 @@
-const decrementCount = document.querySelector('[data-action= "decrement"]');
-const incrementCount = document.querySelector('[data-action= "increment"]');
-const valueCountable = document.getElementById("value");
+const insertName = document.getElementById("name-input");
+const outputSpan = document.getElementById("name-output");
 
-let counterValue = 0;
-
-decrementCount.addEventListener('click', e => {
-    counterValue -= 1;
-    valueCountable.textContent = counterValue;
-  });
-
-  incrementCount.addEventListener('click', e => {
-    counterValue += 1;
-    valueCountable.textContent = counterValue;
-  });
+insertName.addEventListener('input', e => {
+    var inputValue = insertName.value.trim();
+    outputSpan.textContent = inputValue || "Anonymous";
+});
